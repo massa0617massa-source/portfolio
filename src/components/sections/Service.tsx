@@ -1,4 +1,5 @@
 import AnimatedBlock from "@/components/ui/AnimatedBlock";
+import SectionWrapper from "@/components/ui/SectionWrapper";
 
 const menuItems = [
   {
@@ -45,7 +46,7 @@ const menuItems = [
 
 export default function Service() {
   return (
-    <section id="service" className="min-h-screen flex flex-col justify-center py-32 pr-16">
+    <SectionWrapper id="service" number="02">
       <AnimatedBlock direction="left">
         <p className="text-[10px] tracking-[0.5em] text-gray-400 mb-8 uppercase">Service</p>
         <h2 className="text-3xl font-light text-gray-900 mb-4 leading-snug">できること</h2>
@@ -75,6 +76,6 @@ export default function Service() {
         ))}
         <div className="border-t border-gray-100" />
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

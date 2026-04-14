@@ -1,4 +1,5 @@
 import AnimatedBlock from "@/components/ui/AnimatedBlock";
+import SectionWrapper from "@/components/ui/SectionWrapper";
 
 const works = [
   {
@@ -40,7 +41,7 @@ const works = [
 
 export default function Works() {
   return (
-    <section id="works" className="min-h-screen flex flex-col justify-center py-32 pr-16">
+    <SectionWrapper id="works" number="03">
       <AnimatedBlock direction="left">
         <p className="text-[10px] tracking-[0.5em] text-gray-400 mb-8 uppercase">Works</p>
         <h2 className="text-3xl font-light text-gray-900 mb-4 leading-snug">実績</h2>
@@ -52,14 +53,14 @@ export default function Works() {
       <div className="space-y-0">
         {works.map((work, i) => (
           <AnimatedBlock key={work.number} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.1}>
-            <div className="border-t border-gray-100 py-10 hover:bg-gray-50 transition-colors duration-300 -mx-4 px-4">
+            <div className="group border-t border-gray-100 py-10 hover:bg-gray-50 transition-colors duration-300 -mx-4 px-4">
               <div className="flex items-start justify-between mb-4">
-                <span className="text-[10px] tracking-widest text-gray-300">{work.number}</span>
+                <span className="text-[10px] tracking-widest text-gray-300 group-hover:text-gray-400 transition-colors duration-300">{work.number}</span>
                 <div className="flex gap-2 flex-wrap justify-end">
                   {work.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[9px] tracking-wider text-gray-400 border border-gray-200 px-2 py-1"
+                      className="text-[9px] tracking-wider text-gray-400 border border-gray-200 px-2 py-1 group-hover:border-gray-400 group-hover:text-gray-600 transition-colors duration-300"
                     >
                       {tag}
                     </span>
@@ -73,6 +74,6 @@ export default function Works() {
         ))}
         <div className="border-t border-gray-100" />
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

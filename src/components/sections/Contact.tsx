@@ -1,8 +1,9 @@
 import AnimatedBlock from "@/components/ui/AnimatedBlock";
+import SectionWrapper from "@/components/ui/SectionWrapper";
 
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen flex flex-col justify-center py-32 pr-16">
+    <SectionWrapper id="contact" number="04">
       <AnimatedBlock direction="left">
         <p className="text-[10px] tracking-[0.5em] text-gray-400 mb-8 uppercase">Contact</p>
         <h2 className="text-4xl font-light text-gray-900 mb-6 leading-snug">
@@ -53,6 +54,6 @@ export default function Contact() {
           </button>
         </form>
       </AnimatedBlock>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -17,7 +17,7 @@ export default function AnimatedBlock({
   stagger = false,
   className = "",
 }: AnimatedBlockProps) {
-  const { ref } = useScrollAnimation({ direction, delay, stagger });
+  const { ref } = useScrollAnimation({ direction: "left", delay, stagger });
 
   return (
     <div ref={ref} className={className}>

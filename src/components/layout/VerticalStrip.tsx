@@ -14,7 +14,7 @@ export default function VerticalStrip() {
 
     const ctx = gsap.context(() => {
       gsap.to(stripRef.current, {
-        x: "40vw",
+        x: "32vw",
         ease: "none",
         scrollTrigger: {
           trigger: document.body,
@@ -30,7 +30,11 @@ export default function VerticalStrip() {
 
   return (
     <div
-      className="fixed left-0 top-0 h-screen w-[10vw] overflow-hidden z-10 pointer-events-none flex items-center"
+      className="fixed left-0 top-0 h-screen w-[40vw] z-10 pointer-events-none flex items-center"
+      style={{
+        WebkitMaskImage: "linear-gradient(to right, black 0%, black 10vw, transparent 10vw, transparent 20vw, black 20vw, black 27vw, transparent 27vw, transparent 100%)",
+        maskImage: "linear-gradient(to right, black 0%, black 10vw, transparent 10vw, transparent 20vw, black 20vw, black 27vw, transparent 27vw, transparent 100%)",
+      }}
       aria-hidden="true"
     >
       <div
