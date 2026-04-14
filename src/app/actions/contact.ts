@@ -13,6 +13,10 @@ export async function submitContact(formData: FormData) {
     return { success: false, error: "入力内容を確認してください。" };
   }
 
+  if (!process.env.RESEND_API_KEY) {
+    return { success: false, error: "APIキーが設定されていません。" };
+  }
+
   const { error } = await resend.emails.send({
     from: "onboarding@resend.dev",
     to: "massa0617massa@gmail.com",
