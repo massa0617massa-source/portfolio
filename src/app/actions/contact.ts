@@ -13,16 +13,17 @@ export async function submitContact(formData: FormData) {
     return { success: false, error: "入力内容を確認してください。" };
   }
 
-  try {
-    await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "massa0617massa@gmail.com",
-      subject: `【ポートフォリオ】${name}様からお問い合わせ`,
-      text: `名前: ${name}\nメール: ${email}\n\n${message}`,
-    });
+  const { error } = await resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: "massa0617massa@gmail.com",
+    subject: `【ポートフォリオ】${name}様からお問い合わせ`,
+    text: `名前: ${name}\nメール: ${email}\n\n${message}`,
+  });
 
-    return { success: true };
-  } catch {
-    return { success: false, error: "送信に失敗しました。時間をおいて再度お試しください。" };
+  if (error) {
+    console.error("Resend error:", error);
+    return { success: false, error: `送信に失敗しました: ${error.message}` };
   }
+
+  return { success: true };
 }
