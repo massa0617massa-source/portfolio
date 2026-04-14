@@ -24,7 +24,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 max-w-sm">
+    <form onSubmit={handleSubmit} className="space-y-8 w-full md:max-w-sm">
       <div>
         <label className="block text-[10px] tracking-[0.3em] text-gray-400 mb-3">NAME</label>
         <input

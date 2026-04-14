@@ -50,7 +50,7 @@ export default function RootLayout({
         <BackToTop />
         <VerticalStrip />
         <SideNav />
-        <main className="ml-[30vw]">
+        <main className="ml-0 pt-14 md:pt-0 md:ml-[30vw]">
           {children}
         </main>
       </body>

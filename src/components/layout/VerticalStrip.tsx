@@ -30,7 +30,7 @@ export default function VerticalStrip() {
 
   return (
     <div
-      className="fixed left-0 top-0 h-screen w-[40vw] z-10 pointer-events-none flex items-center"
+      className="hidden md:flex fixed left-0 top-0 h-screen w-[40vw] z-10 pointer-events-none items-center"
       style={{
         WebkitMaskImage: "linear-gradient(to right, black 0%, black 10vw, transparent 10vw, transparent 20vw, black 20vw, black 27vw, transparent 27vw, transparent 100%)",
         maskImage: "linear-gradient(to right, black 0%, black 10vw, transparent 10vw, transparent 20vw, black 20vw, black 27vw, transparent 27vw, transparent 100%)",

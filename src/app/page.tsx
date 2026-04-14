@@ -7,7 +7,7 @@ import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="px-12">
+    <div className="px-6 md:px-12">
       <Hero />
       <About />
       <Service />

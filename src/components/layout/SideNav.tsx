@@ -28,39 +28,53 @@ export default function SideNav() {
   }, []);
 
   return (
-    <nav className="fixed left-[10vw] top-0 h-screen w-[20vw] flex flex-col justify-between py-16 px-8 z-20">
-      {/* 名前 */}
-      <div>
-        <p className="text-[10px] tracking-[0.4em] text-gray-400 mb-1 uppercase">Portfolio</p>
-        <h1 className="text-sm font-medium tracking-wider text-gray-900">
-          Masatoshi<br />Sato
-        </h1>
+    <>
+      {/* モバイルヘッダー */}
+      <div className="md:hidden fixed top-0 left-0 right-0 h-14 flex items-center justify-between px-6 bg-white/90 backdrop-blur-sm z-20 border-b border-gray-100">
+        <div>
+          <p className="text-[9px] tracking-[0.4em] text-gray-400 uppercase">Portfolio</p>
+          <h1 className="text-xs font-medium tracking-wider text-gray-900">Masatoshi Sato</h1>
+        </div>
+        <a href="#contact" className="text-[9px] tracking-[0.3em] border border-gray-900 text-gray-900 px-3 py-2 hover:bg-gray-900 hover:text-white transition-colors duration-300">
+          CONTACT
+        </a>
       </div>
 
-      {/* ナビリンク */}
-      <ul className="space-y-5">
-        {NAV_ITEMS.map((item) => {
-          const id = item.href.slice(1);
-          const isActive = activeId === id;
-          return (
-            <li key={id}>
-              <a
-                href={item.href}
-                className={`text-[10px] tracking-[0.3em] transition-colors duration-300 ${
-                  isActive ? "text-gray-900" : "text-gray-400 hover:text-gray-600"
-                }`}
-              >
-                {isActive && (
-                  <span className="inline-block w-4 h-px bg-gray-900 mr-2 align-middle" />
-                )}
-                {item.label}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      {/* デスクトップサイドナビ */}
+      <nav className="hidden md:flex fixed left-[10vw] top-0 h-screen w-[20vw] flex-col justify-between py-16 px-8 z-20">
+        {/* 名前 */}
+        <div>
+          <p className="text-[10px] tracking-[0.4em] text-gray-400 mb-1 uppercase">Portfolio</p>
+          <h1 className="text-sm font-medium tracking-wider text-gray-900">
+            Masatoshi<br />Sato
+          </h1>
+        </div>
 
-      <div />
-    </nav>
+        {/* ナビリンク */}
+        <ul className="space-y-5">
+          {NAV_ITEMS.map((item) => {
+            const id = item.href.slice(1);
+            const isActive = activeId === id;
+            return (
+              <li key={id}>
+                <a
+                  href={item.href}
+                  className={`text-[10px] tracking-[0.3em] transition-colors duration-300 ${
+                    isActive ? "text-gray-900" : "text-gray-400 hover:text-gray-600"
+                  }`}
+                >
+                  {isActive && (
+                    <span className="inline-block w-4 h-px bg-gray-900 mr-2 align-middle" />
+                  )}
+                  {item.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div />
+      </nav>
+    </>
   );
 }

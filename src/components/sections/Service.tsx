@@ -58,8 +58,8 @@ export default function Service() {
       <div className="space-y-0">
         {menuItems.map((menu, i) => (
           <AnimatedBlock key={menu.category} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.08}>
-            <div className="border-t border-gray-100 py-8 flex gap-8">
-              <div className="w-32 shrink-0">
+            <div className="border-t border-gray-100 py-8 flex flex-col gap-4 md:flex-row md:gap-8">
+              <div className="md:w-32 md:shrink-0">
                 <p className="text-[9px] tracking-[0.3em] text-gray-300 mb-1">{menu.category}</p>
                 <p className="text-sm font-medium text-gray-900">{menu.label}</p>
               </div>

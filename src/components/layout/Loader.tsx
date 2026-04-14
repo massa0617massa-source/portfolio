@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 
 export default function Loader() {
   const topRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLParagraphElement>(null);
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     if (!topRef.current || !bottomRef.current || !nameRef.current) return;
@@ -37,15 +38,14 @@ export default function Loader() {
         yPercent: 100,
         duration: 0.8,
         ease: "power3.inOut",
-        onComplete: () => {
-          if (topRef.current) topRef.current.style.display = "none";
-          if (bottomRef.current) bottomRef.current.style.display = "none";
-        },
+        onComplete: () => setDone(true),
       }, "open");
     });
 
     return () => ctx.revert();
   }, []);
+
+  if (done) return null;
 
   return (
     <>

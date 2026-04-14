@@ -50,7 +50,7 @@ export default function Hero() {
   const typedLines = typed.split("\n");
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center py-32 pr-16">
+    <section id="hero" className="min-h-screen flex flex-col justify-center py-20 pr-4 md:py-32 md:pr-16">
       <p ref={labelRef} className="text-[10px] tracking-[0.5em] text-gray-400 mb-8 uppercase opacity-0">
         Freelance Engineer
       </p>
@@ -60,7 +60,7 @@ export default function Hero() {
           line === "" ? (
             <br key={i} />
           ) : i < 2 ? (
-            <p key={i} className="text-4xl font-light leading-snug text-gray-900 tracking-tight">
+            <p key={i} className="text-3xl md:text-4xl font-light leading-snug text-gray-900 tracking-tight">
               {line}{i === typedLines.length - 1 && !done && <span className="animate-pulse">|</span>}
             </p>
           ) : (
