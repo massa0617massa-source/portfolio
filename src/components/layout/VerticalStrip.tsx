@@ -1,0 +1,45 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { STRIP_TEXT } from "@/lib/constants";
+
+const REPEATED_TEXT = Array(12).fill(STRIP_TEXT).join("");
+
+export default function VerticalStrip() {
+  const stripRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!stripRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.to(stripRef.current, {
+        x: "40vw",
+        ease: "none",
+        scrollTrigger: {
+          trigger: document.body,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1.5,
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div
+      className="fixed left-0 top-0 h-screen w-[10vw] overflow-hidden z-10 pointer-events-none flex items-center"
+      aria-hidden="true"
+    >
+      <div
+        ref={stripRef}
+        className="whitespace-nowrap text-[10px] tracking-[0.3em] text-gray-300 font-light"
+        style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+      >
+        {REPEATED_TEXT}
+      </div>
+    </div>
+  );
+}
