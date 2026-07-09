@@ -15,22 +15,23 @@ interface Work {
 const works: Work[] = [
   {
     number: "01",
-    title: "ECモール在庫調整システム",
-    client: "EC事業会社様",
-    thumbnail: "inventory",
-    tags: ["Cloudflare Workers", "Hono", "Supabase", "楽天・Yahoo!・eBay API"],
+    title: "LINE公式×Lステップ構築",
+    client: "オンラインスクール運営者様",
+    thumbnail: "lineBuild",
+    tags: ["LINE公式アカウント", "Lステップ", "配信シナリオ設計"],
     description:
-      "楽天・Yahoo!ショッピング・eBayの複数モールをAPI連携し、在庫を自動調整するシステムを開発。Cloudflare Workers/Pages + Hono + Supabase構成。",
-    result: "複数モールの在庫管理を一元化。現在も稼働中。",
+      "LINE公式アカウントの開設からLステップの初期設定、4段階のステップ配信シナリオ、リッチメニュー、予約ツール連携まで一括構築。",
+    result: "構築から納品・操作ガイド作成まで一貫対応。",
   },
   {
     number: "02",
-    title: "AI活用SEO最適化ツール",
-    client: "EC事業会社様",
-    thumbnail: "seo",
-    tags: ["Cloudflare Workers", "AI API連携", "SEO"],
-    description: "EC商品ページのSEOをAIで分析・最適化するツールを開発。",
-    result: "商品ページ改善の工数を大幅削減。現在も稼働中。",
+    title: "LINE配信基盤の受託開発",
+    client: "販売事業者様",
+    thumbnail: "linePlatform",
+    tags: ["ステップ配信エンジン", "LIFF", "React", "CRM"],
+    description:
+      "Lステップ相当の配信基盤をフルスクラッチ開発。ステップ配信エンジン、タグ別セグメント配信、リッチメニュー自動切替、LIFFフォーム、React製CRM管理画面。",
+    result: "月額ツールなしで自社運用できる配信基盤を実現。",
   },
   {
     number: "03",
@@ -44,23 +45,22 @@ const works: Work[] = [
   },
   {
     number: "04",
-    title: "LINE公式×Lステップ構築",
-    client: "オンラインスクール運営者様",
-    thumbnail: "lineBuild",
-    tags: ["LINE公式アカウント", "Lステップ", "配信シナリオ設計"],
+    title: "ECモール在庫調整システム",
+    client: "EC事業会社様",
+    thumbnail: "inventory",
+    tags: ["Cloudflare Workers", "Hono", "Supabase", "楽天・Yahoo!・eBay API"],
     description:
-      "LINE公式アカウントの開設からLステップの初期設定、4段階のステップ配信シナリオ、リッチメニュー、予約ツール連携まで一括構築。",
-    result: "構築から納品・操作ガイド作成まで一貫対応。",
+      "楽天・Yahoo!ショッピング・eBayの複数モールをAPI連携し、在庫を自動調整するシステムを開発。Cloudflare Workers/Pages + Hono + Supabase構成。",
+    result: "複数モールの在庫管理を一元化。現在も稼働中。",
   },
   {
     number: "05",
-    title: "LINE配信基盤の受託開発",
-    client: "販売事業者様",
-    thumbnail: "linePlatform",
-    tags: ["ステップ配信エンジン", "LIFF", "React", "CRM"],
-    description:
-      "Lステップ相当の配信基盤をフルスクラッチ開発。ステップ配信エンジン、タグ別セグメント配信、リッチメニュー自動切替、LIFFフォーム、React製CRM管理画面。",
-    result: "月額ツールなしで自社運用できる配信基盤を実現。",
+    title: "AI活用SEO最適化ツール",
+    client: "EC事業会社様",
+    thumbnail: "seo",
+    tags: ["Cloudflare Workers", "AI API連携", "SEO"],
+    description: "EC商品ページのSEOをAIで分析・最適化するツールを開発。",
+    result: "商品ページ改善の工数を大幅削減。現在も稼働中。",
   },
 ];
 

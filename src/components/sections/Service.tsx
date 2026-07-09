@@ -13,6 +13,17 @@ const menuItems = [
     ],
   },
   {
+    category: "LINE",
+    label: "LINE公式・Lステップ構築",
+    items: [
+      "LINE公式アカウントの開設・初期構築",
+      "Lステップの構築（ステップ配信・リッチメニュー・流入経路分析）",
+      "配信シナリオの設計・改善",
+      "予約ツール・外部サービスとの連携",
+      "Lステップ相当の独自配信基盤の受託開発",
+    ],
+  },
+  {
     category: "AI / AUTOMATION",
     label: "AI・業務自動化",
     items: [
