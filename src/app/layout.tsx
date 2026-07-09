@@ -20,12 +20,13 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://masatoshi-sato-official.vercel.app"),
   title: "Masatoshi Sato | Freelance Engineer",
   description: "MVP開発・AI実装・業務自動化を最短で。スタートアップのゼロイチ開発を支援するフルスタックエンジニア、佐藤雅俊のポートフォリオ。",
   openGraph: {
     title: "Masatoshi Sato | Freelance Engineer",
     description: "MVP開発・AI実装・業務自動化。最短で動くものを作るフルスタックエンジニア、佐藤雅俊のポートフォリオ。",
-    url: "https://portfolio-129l6owdc-massa0617massa-sources-projects.vercel.app",
+    url: "https://masatoshi-sato-official.vercel.app",
     siteName: "Masatoshi Sato Portfolio",
     locale: "ja_JP",
     type: "website",
