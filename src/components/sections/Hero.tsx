@@ -4,11 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 
 const LINES = [
-  "「これも頼めますか？」",
-  "そういう依頼、大歓迎です。",
+  "アイデアを、動くものにする。",
   "",
-  "Web開発・AI活用・SNS運用まで、",
-  "困ったことがあればまず気軽に声をかけてください。",
+  "MVP開発 · AI実装 · 自動化",
+  "── 最短で形にします。",
 ];
 
 const FULL_TEXT = LINES.join("\n");
@@ -16,8 +15,8 @@ const FULL_TEXT = LINES.join("\n");
 export default function Hero() {
   const [typed, setTyped] = useState("");
   const [done, setDone] = useState(false);
-  const labelRef = useRef<HTMLParagraphElement>(null);
-  const btnRef = useRef<HTMLAnchorElement>(null);
+  const labelRef = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLDivElement>(null);
   const indexRef = useRef(0);
 
   useEffect(() => {
@@ -51,15 +50,16 @@ export default function Hero() {
 
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center py-20 pr-4 md:py-32 md:pr-16">
-      <p ref={labelRef} className="text-[10px] tracking-[0.5em] text-gray-400 mb-8 uppercase opacity-0">
-        Freelance Engineer
-      </p>
+      <div ref={labelRef} className="mb-8 opacity-0">
+        <p className="text-[10px] tracking-[0.5em] text-gray-400 uppercase">Full-Stack Engineer</p>
+        <p className="text-[10px] tracking-[0.4em] text-gray-300 uppercase mt-1">AI × Web × Automation</p>
+      </div>
 
       <div className="mb-12">
         {typedLines.map((line, i) =>
           line === "" ? (
             <br key={i} />
-          ) : i < 2 ? (
+          ) : i < 1 ? (
             <p key={i} className="text-3xl md:text-4xl font-light leading-snug text-gray-900 tracking-tight">
               {line}{i === typedLines.length - 1 && !done && <span className="animate-pulse">|</span>}
             </p>
@@ -71,13 +71,20 @@ export default function Hero() {
         )}
       </div>
 
-      <a
-        ref={btnRef}
-        href="#contact"
-        className="inline-block text-[10px] tracking-[0.4em] border border-gray-900 text-gray-900 px-8 py-4 hover:bg-gray-900 hover:text-white transition-colors duration-300 opacity-0 w-fit"
-      >
-        CONTACT
-      </a>
+      <div ref={btnRef} className="flex gap-4 flex-wrap opacity-0">
+        <a
+          href="#works"
+          className="inline-block text-[10px] tracking-[0.4em] border border-gray-300 text-gray-600 px-8 py-4 hover:border-gray-900 hover:text-gray-900 transition-colors duration-300 w-fit"
+        >
+          VIEW WORKS
+        </a>
+        <a
+          href="#contact"
+          className="inline-block text-[10px] tracking-[0.4em] border border-gray-900 text-gray-900 px-8 py-4 hover:bg-gray-900 hover:text-white transition-colors duration-300 w-fit"
+        >
+          CONTACT
+        </a>
+      </div>
     </section>
   );
 }

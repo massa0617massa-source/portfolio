@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <clipPath id="circle">
+      <circle cx="200" cy="200" r="198"/>
+    </clipPath>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f0f2f5"/>
+      <stop offset="100%" stop-color="#dde1e7"/>
+    </radialGradient>
+    <radialGradient id="faceGrad" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f0e8df"/>
+      <stop offset="60%" stop-color="#e8ddd4"/>
+      <stop offset="100%" stop-color="#d4c8be"/>
+    </radialGradient>
+    <radialGradient id="shirtGrad" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#5a6678"/>
+      <stop offset="100%" stop-color="#3d4654"/>
+    </radialGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d3442"/>
+      <stop offset="100%" stop-color="#1a2030"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#00000020"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="url(#bgGrad)"/>
+
+  <!-- Clip group -->
+  <g clip-path="url(#circle)">
+
+    <!-- Shirt / body -->
+    <ellipse cx="200" cy="410" rx="145" ry="95" fill="url(#shirtGrad)"/>
+
+    <!-- Collar left -->
+    <path d="M 153 318 L 192 302 L 200 340 L 148 360 Z" fill="#4a5568"/>
+    <!-- Collar right -->
+    <path d="M 247 318 L 208 302 L 200 340 L 252 360 Z" fill="#3d4a5c"/>
+
+    <!-- Neck -->
+    <path d="M 184 262 Q 184 315 192 318 Q 200 322 208 318 Q 216 315 216 262 Q 208 268 200 268 Q 192 268 184 262 Z" fill="#e0d4c8"/>
+
+    <!-- Head shadow (subtle) -->
+    <ellipse cx="200" cy="195" rx="80" ry="88" fill="#c8bdb3" filter="url(#shadow)"/>
+
+    <!-- Head -->
+    <ellipse cx="200" cy="192" rx="78" ry="86" fill="url(#faceGrad)"/>
+
+    <!-- Hair back -->
+    <ellipse cx="200" cy="118" rx="78" ry="42" fill="url(#hairGrad)"/>
+    <rect x="122" y="116" width="156" height="42" fill="#1a2030"/>
+
+    <!-- Hair left side -->
+    <path d="M 122 130 Q 118 170 122 210 Q 130 215 138 208 Q 136 168 136 136 Z" fill="url(#hairGrad)"/>
+    <!-- Hair right side -->
+    <path d="M 278 130 Q 282 170 278 210 Q 270 215 262 208 Q 264 168 264 136 Z" fill="url(#hairGrad)"/>
+
+    <!-- Hair top clean edge -->
+    <ellipse cx="200" cy="118" rx="78" ry="40" fill="url(#hairGrad)"/>
+
+    <!-- Ear left -->
+    <ellipse cx="126" cy="196" rx="12" ry="16" fill="#ddd0c5"/>
+    <ellipse cx="128" cy="196" rx="7" ry="11" fill="#d4c5ba"/>
+    <!-- Ear right -->
+    <ellipse cx="274" cy="196" rx="12" ry="16" fill="#ddd0c5"/>
+    <ellipse cx="272" cy="196" rx="7" ry="11" fill="#d4c5ba"/>
+
+    <!-- Face overlay for hair line transition -->
+    <ellipse cx="200" cy="192" rx="76" ry="84" fill="url(#faceGrad)"/>
+
+    <!-- Forehead hair line -->
+    <path d="M 136 155 Q 160 135 200 132 Q 240 135 264 155 Q 240 144 200 142 Q 160 144 136 155 Z" fill="url(#hairGrad)"/>
+
+    <!-- Eyebrow left -->
+    <path d="M 161 167 Q 173 160 189 164" stroke="#2d3442" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- Eyebrow right -->
+    <path d="M 211 164 Q 227 160 239 167" stroke="#2d3442" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+    <!-- Eye socket shadow left -->
+    <ellipse cx="175" cy="180" rx="14" ry="11" fill="#c8bdb3" opacity="0.4"/>
+    <!-- Eye socket shadow right -->
+    <ellipse cx="225" cy="180" rx="14" ry="11" fill="#c8bdb3" opacity="0.4"/>
+
+    <!-- Eye white left -->
+    <ellipse cx="175" cy="179" rx="12" ry="10" fill="#f8f8f8"/>
+    <!-- Eye white right -->
+    <ellipse cx="225" cy="179" rx="12" ry="10" fill="#f8f8f8"/>
+
+    <!-- Iris left -->
+    <circle cx="175" cy="180" r="7.5" fill="#2c3e50"/>
+    <!-- Iris right -->
+    <circle cx="225" cy="180" r="7.5" fill="#2c3e50"/>
+
+    <!-- Pupil left -->
+    <circle cx="175" cy="180" r="4.5" fill="#111820"/>
+    <!-- Pupil right -->
+    <circle cx="225" cy="180" r="4.5" fill="#111820"/>
+
+    <!-- Eye highlight left -->
+    <circle cx="178" cy="177" r="2.8" fill="white" opacity="0.9"/>
+    <!-- Eye highlight right -->
+    <circle cx="228" cy="177" r="2.8" fill="white" opacity="0.9"/>
+
+    <!-- Eyelid line left -->
+    <path d="M 163 175 Q 175 170 187 175" stroke="#8a7a70" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Eyelid line right -->
+    <path d="M 213 175 Q 225 170 237 175" stroke="#8a7a70" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M 200 192 C 198 200 194 208 193 212 Q 197 216 200 215 Q 203 216 207 212 C 206 208 202 200 200 192 Z" fill="#c8b8aa" opacity="0.7"/>
+    <!-- Nose bottom -->
+    <path d="M 193 212 Q 200 217 207 212" stroke="#b8a898" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Cheek blush left (very subtle) -->
+    <ellipse cx="158" cy="206" rx="16" ry="10" fill="#e8a090" opacity="0.12"/>
+    <!-- Cheek blush right -->
+    <ellipse cx="242" cy="206" rx="16" ry="10" fill="#e8a090" opacity="0.12"/>
+
+    <!-- Mouth -->
+    <path d="M 182 226 Q 200 238 218 226" stroke="#b09888" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Upper lip hint -->
+    <path d="M 185 224 Q 193 220 200 222 Q 207 220 215 224" stroke="#c0a898" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+  </g>
+
+  <!-- Outer border -->
+  <circle cx="200" cy="200" r="198" fill="none" stroke="#d0d5dd" stroke-width="2"/>
+</svg>

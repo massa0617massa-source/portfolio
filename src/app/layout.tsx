@@ -20,11 +20,11 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Masatoshi Sato | Portfolio",
-  description: "Web開発・AI活用・SNS運用のフリーランスエンジニア、佐藤雅俊のポートフォリオサイトです。「これも頼めますか？」そういう依頼、大歓迎です。",
+  title: "Masatoshi Sato | Freelance Engineer",
+  description: "MVP開発・AI実装・業務自動化を最短で。スタートアップのゼロイチ開発を支援するフルスタックエンジニア、佐藤雅俊のポートフォリオ。",
   openGraph: {
-    title: "Masatoshi Sato | Portfolio",
-    description: "Web開発・AI活用・SNS運用のフリーランスエンジニア、佐藤雅俊のポートフォリオサイトです。「これも頼めますか？」そういう依頼、大歓迎です。",
+    title: "Masatoshi Sato | Freelance Engineer",
+    description: "MVP開発・AI実装・業務自動化。最短で動くものを作るフルスタックエンジニア、佐藤雅俊のポートフォリオ。",
     url: "https://portfolio-129l6owdc-massa0617massa-sources-projects.vercel.app",
     siteName: "Masatoshi Sato Portfolio",
     locale: "ja_JP",
@@ -32,8 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Masatoshi Sato | Portfolio",
-    description: "Web開発・AI活用・SNS運用のフリーランスエンジニア、佐藤雅俊のポートフォリオサイトです。「これも頼めますか？」そういう依頼、大歓迎です。",
+    title: "Masatoshi Sato | Freelance Engineer",
+    description: "MVP開発・AI実装・業務自動化。最短で動くものを作るフルスタックエンジニア。",
+    creator: "@tanuki_ai_lab",
   },
 };
 
