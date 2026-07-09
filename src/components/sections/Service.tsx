@@ -49,15 +49,15 @@ export default function Service() {
     <SectionWrapper id="service" number="02">
       <AnimatedBlock direction="left">
         <p className="text-[10px] tracking-[0.5em] text-gray-400 mb-8 uppercase">Service</p>
-        <h2 className="text-3xl font-light text-gray-900 mb-4 leading-snug">できること</h2>
-        <p className="text-sm text-gray-400 mb-16 leading-loose">
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-snug">できること</h2>
+        <p className="text-sm text-gray-400 mb-20 leading-loose">
           ここに書いていないことでも、相談してください。
         </p>
       </AnimatedBlock>
 
       <div className="space-y-0">
         {menuItems.map((menu, i) => (
-          <AnimatedBlock key={menu.category} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.08}>
+          <AnimatedBlock key={menu.category} direction="left" delay={i * 0.08}>
             <div className="border-t border-gray-100 py-8 flex flex-col gap-4 md:flex-row md:gap-8">
               <div className="md:w-32 md:shrink-0">
                 <p className="text-[9px] tracking-[0.3em] text-gray-300 mb-1">{menu.category}</p>

@@ -13,7 +13,7 @@ export default function About() {
     <SectionWrapper id="about" number="01">
       <AnimatedBlock direction="left">
         <p className="text-[10px] tracking-[0.5em] text-gray-400 mb-8 uppercase">About</p>
-        <h2 className="text-3xl font-light text-gray-900 mb-2 leading-snug">
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-3 leading-snug">
           佐藤 雅俊
         </h2>
         <p className="text-[10px] tracking-[0.3em] text-gray-400 mb-16">
