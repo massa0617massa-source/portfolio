@@ -4,10 +4,10 @@ import ContactForm from "@/components/ui/ContactForm";
 
 export default function Contact() {
   return (
-    <SectionWrapper id="contact" number="04">
+    <SectionWrapper id="contact" number="06">
       <AnimatedBlock direction="left">
         <p className="text-[10px] tracking-[0.5em] text-gray-400 mb-8 uppercase">Contact</p>
-        <h2 className="text-4xl font-light text-gray-900 mb-6 leading-snug">
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-snug">
           まずは、話してみてください。
         </h2>
         <p className="text-sm text-gray-500 mb-6 leading-loose">
