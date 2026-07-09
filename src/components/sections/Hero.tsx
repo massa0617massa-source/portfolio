@@ -1,77 +1,113 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 
-const LINES = [
-  "アイデアを、動くものにする。",
-  "",
-  "MVP開発 · AI実装 · 自動化",
-  "── 最短で形にします。",
-];
-
-const FULL_TEXT = LINES.join("\n");
+const MARQUEE_TEXT = "MASATOSHI SATO — FULL-STACK ENGINEER — ";
 
 export default function Hero() {
-  const [typed, setTyped] = useState("");
-  const [done, setDone] = useState(false);
-  const labelRef = useRef<HTMLDivElement>(null);
-  const btnRef = useRef<HTMLDivElement>(null);
-  const indexRef = useRef(0);
+  const rootRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const delay = setTimeout(() => {
-      const interval = setInterval(() => {
-        indexRef.current += 1;
-        const next = FULL_TEXT.slice(0, indexRef.current);
-        setTyped(next);
-        if (indexRef.current >= FULL_TEXT.length) {
-          clearInterval(interval);
-          setDone(true);
-        }
-      }, 60);
-      return () => clearInterval(interval);
-    }, 600);
-    return () => clearTimeout(delay);
+    const root = rootRef.current;
+    if (!root) return;
+
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReduced) return;
+
+    const lines = root.querySelectorAll<HTMLElement>("[data-reveal]");
+    const fades = root.querySelectorAll<HTMLElement>("[data-fade]");
+
+    const ctx = gsap.context(() => {
+      gsap.set(lines, { yPercent: 110 });
+      gsap.set(fades, { opacity: 0, y: 10 });
+    }, root);
+
+    let played = false;
+    const play = () => {
+      if (played) return;
+      played = true;
+      ctx.add(() => {
+        const tl = gsap.timeline({ delay: 0.6 });
+        tl.to(lines, {
+          yPercent: 0,
+          duration: 1,
+          stagger: 0.12,
+          ease: "power4.out",
+        }).to(
+          fades,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power3.out",
+          },
+          "-=0.5"
+        );
+      });
+    };
+
+    window.addEventListener("loader:done", play);
+    const fallback = setTimeout(play, 4000);
+
+    return () => {
+      window.removeEventListener("loader:done", play);
+      clearTimeout(fallback);
+      ctx.revert();
+    };
   }, []);
 
-  useEffect(() => {
-    if (!done) return;
-    gsap.from([labelRef.current, btnRef.current], {
-      opacity: 0,
-      y: 10,
-      duration: 0.6,
-      stagger: 0.15,
-      ease: "power3.out",
-    });
-  }, [done]);
-
-  const typedLines = typed.split("\n");
-
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center py-20 pr-4 md:py-32 md:pr-16">
-      <div ref={labelRef} className="mb-8 opacity-0">
-        <p className="text-[10px] tracking-[0.5em] text-gray-400 uppercase">Full-Stack Engineer</p>
-        <p className="text-[10px] tracking-[0.4em] text-gray-300 uppercase mt-1">AI × Web × Automation</p>
+    <section
+      ref={rootRef}
+      id="hero"
+      className="relative min-h-screen flex flex-col justify-center py-20 pr-4 md:py-32 md:pr-16 overflow-hidden"
+    >
+      <div data-fade className="mb-8">
+        <p className="text-[10px] tracking-[0.5em] text-gray-400 uppercase">
+          Full-Stack Engineer
+        </p>
+        <p className="text-[10px] tracking-[0.4em] text-gray-300 uppercase mt-1">
+          AI × Web × Automation
+        </p>
       </div>
+
+      <h2 className="mb-10">
+        <span className="block overflow-hidden">
+          <span
+            data-reveal
+            className="block text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1.15] tracking-tight text-gray-900"
+          >
+            アイデアを、
+          </span>
+        </span>
+        <span className="block overflow-hidden">
+          <span
+            data-reveal
+            className="block text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1.15] tracking-tight text-gray-900"
+          >
+            <span className="text-stroke-dark">動くもの</span>にする。
+          </span>
+        </span>
+      </h2>
 
       <div className="mb-12">
-        {typedLines.map((line, i) =>
-          line === "" ? (
-            <br key={i} />
-          ) : i < 1 ? (
-            <p key={i} className="text-3xl md:text-4xl font-light leading-snug text-gray-900 tracking-tight">
-              {line}{i === typedLines.length - 1 && !done && <span className="animate-pulse">|</span>}
-            </p>
-          ) : (
-            <p key={i} className="text-sm text-gray-500 leading-loose">
-              {line}{i === typedLines.length - 1 && !done && <span className="animate-pulse">|</span>}
-            </p>
-          )
-        )}
+        <span className="block overflow-hidden">
+          <span data-reveal className="block text-sm text-gray-500 leading-loose">
+            MVP開発 · AI実装 · 自動化
+          </span>
+        </span>
+        <span className="block overflow-hidden">
+          <span data-reveal className="block text-sm text-gray-500 leading-loose">
+            ── 最短で形にします。
+          </span>
+        </span>
       </div>
 
-      <div ref={btnRef} className="flex gap-4 flex-wrap opacity-0">
+      <div data-fade className="flex gap-4 flex-wrap">
         <a
           href="#works"
           className="inline-block text-[10px] tracking-[0.4em] border border-gray-300 text-gray-600 px-8 py-4 hover:border-gray-900 hover:text-gray-900 transition-colors duration-300 w-fit"
@@ -84,6 +120,21 @@ export default function Hero() {
         >
           CONTACT
         </a>
+      </div>
+
+      {/* マーキー帯 */}
+      <div
+        className="absolute bottom-6 left-0 right-0 overflow-hidden pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <div className="animate-marquee flex whitespace-nowrap will-change-transform">
+          <span className="text-stroke-light text-5xl md:text-7xl font-medium tracking-wider shrink-0">
+            {MARQUEE_TEXT.repeat(4)}
+          </span>
+          <span className="text-stroke-light text-5xl md:text-7xl font-medium tracking-wider shrink-0">
+            {MARQUEE_TEXT.repeat(4)}
+          </span>
+        </div>
       </div>
     </section>
   );

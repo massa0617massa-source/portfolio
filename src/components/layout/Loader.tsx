@@ -38,7 +38,10 @@ export default function Loader() {
         yPercent: 100,
         duration: 0.8,
         ease: "power3.inOut",
-        onComplete: () => setDone(true),
+        onComplete: () => {
+          setDone(true);
+          window.dispatchEvent(new Event("loader:done"));
+        },
       }, "open");
     });
 

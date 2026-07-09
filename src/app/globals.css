@@ -29,3 +29,30 @@ a, button, [role='button'] {
 * {
   box-sizing: border-box;
 }
+
+/* アウトライン文字（A案: 巨大タイポ用） */
+.text-stroke-dark {
+  -webkit-text-stroke: 1.5px #111827;
+  color: transparent;
+}
+
+.text-stroke-light {
+  -webkit-text-stroke: 1px #d1d5db;
+  color: transparent;
+}
+
+/* Hero下部マーキー帯 */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
