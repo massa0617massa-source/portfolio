@@ -26,7 +26,7 @@ export default function About() {
               佐藤 雅俊
             </h2>
             <p className="text-[11px] tracking-[0.25em] text-gray-500">
-              静岡県出身
+              静岡出身
               <br className="md:hidden" />
               ｜電気通信大学でプログラミングと情報セキュリティを学ぶ
             </p>
@@ -37,16 +37,16 @@ export default function About() {
       <AnimatedBlock direction="left" delay={0.1}>
         <div className="text-[15px] text-gray-800 leading-loose mb-14 max-w-2xl space-y-6">
           <p className="text-lg font-medium text-gray-900 leading-relaxed">
-            多くの企業のAI活用をリードしてきた。
+            多くの企業のAI活用をリードする。
             <br />
             製造・自動車・ECまで、業種を問わず現場に入っている。
           </p>
           <p>
-            ダンスで日本一。舞台で鍛えた集中力と人前でのアピール力を、そのままAIに注いでいる。
+            ダンスで身に着けた集中力や人前でのアピール力を、AIに注いでいる。
           </p>
           <p>
-            AIエージェント基盤、ECモールの在庫自動化、LINE配信基盤、AI×SEOの記事制作パイプライン。
-            要件を決めるところから運用まで、一人で設計して本番で動かしてきた。
+            AIエージェント基盤、ECモールの在庫自動化、LINE配信基盤、AI×SEOの記事制作パイプラインを、
+            要件を決めるところから運用まで一人で作ってきた。
           </p>
           <p>
             目の前の一人と話し、その人の状況に合わせて作る。
