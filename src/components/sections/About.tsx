@@ -10,8 +10,7 @@ const skills = [
 ];
 
 const timeline = [
-  { year: "在学中", body: "電気通信大学 情報理工学域。プログラミングと情報セキュリティを学ぶ" },
-  { year: "2026", body: "個人事業主として開業。AI開発・業務自動化を中心に受託" },
+  { year: "2026", body: "個人事業主として開業。AI開発・業務自動化を軸に受託" },
   { year: "2028", body: "法人化を予定" },
 ];
 
@@ -27,28 +26,31 @@ export default function About() {
               佐藤 雅俊
             </h2>
             <p className="text-[11px] tracking-[0.25em] text-gray-500">
-              電気通信大学 情報理工学域
+              静岡県出身
               <br className="md:hidden" />
-              ｜プログラミング・情報セキュリティを専攻
+              ｜電気通信大学でプログラミングと情報セキュリティを学ぶ
             </p>
           </div>
         </div>
       </AnimatedBlock>
 
       <AnimatedBlock direction="left" delay={0.1}>
-        <div className="text-sm text-gray-700 leading-loose mb-14 max-w-xl space-y-5">
-          <p>
-            大学でプログラミングと情報セキュリティを学びながら、フルスタックエンジニアとして独立しました。
-            AIエージェントの開発、業務の自動化、LINEを使った仕組みづくり、Webサイト・アプリの制作まで、
-            要件を決めるところから運用まで一人で担当しています。
+        <div className="text-[15px] text-gray-800 leading-loose mb-14 max-w-2xl space-y-6">
+          <p className="text-lg font-medium text-gray-900 leading-relaxed">
+            多くの企業のAI活用をリードしてきた。
+            <br />
+            製造・自動車・ECまで、業種を問わず現場に入っている。
           </p>
           <p>
-            平日の日中に動けるので、決めたいことを翌日まで持ち越さずに済みます。
-            会社員の副業では難しい時間帯にも返事ができるのが、いまの強みだと思っています。
+            ダンスで日本一。舞台で鍛えた集中力と人前でのアピール力を、そのままAIに注いでいる。
           </p>
           <p>
-            苦手なことも先に書いておきます。マス向けの派手なマーケティングは得意ではありません。
-            目の前の一人と話して、その人の状況に合わせて作るほうが、ずっと得意です。
+            AIエージェント基盤、ECモールの在庫自動化、LINE配信基盤、AI×SEOの記事制作パイプライン。
+            要件を決めるところから運用まで、一人で設計して本番で動かしてきた。
+          </p>
+          <p>
+            目の前の一人と話し、その人の状況に合わせて作る。
+            平日の日中に動けるので、決めたいことを翌日まで持ち越さない。
           </p>
         </div>
       </AnimatedBlock>
