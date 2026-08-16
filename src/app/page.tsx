@@ -1,9 +1,8 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import Service from "@/components/sections/Service";
 import Works from "@/components/sections/Works";
-import Process from "@/components/sections/Process";
-import Faq from "@/components/sections/Faq";
+import Service from "@/components/sections/Service";
+import Vision from "@/components/sections/Vision";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
@@ -12,10 +11,9 @@ export default function Home() {
     <div className="px-6 md:px-12">
       <Hero />
       <About />
-      <Service />
       <Works />
-      <Process />
-      <Faq />
+      <Service />
+      <Vision />
       <Contact />
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NAV_ITEMS, SOCIAL_LINKS } from "@/lib/constants";
+import { NAV_ITEMS } from "@/lib/constants";
 
 export default function SideNav() {
   const [activeId, setActiveId] = useState("hero");
@@ -32,7 +32,7 @@ export default function SideNav() {
       {/* モバイルヘッダー */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-14 flex items-center justify-between px-6 bg-white/90 backdrop-blur-sm z-20 border-b border-gray-100">
         <div>
-          <p className="text-[9px] tracking-[0.4em] text-gray-400 uppercase">Portfolio</p>
+          <p className="text-[9px] tracking-[0.4em] text-gray-500 uppercase">Portfolio</p>
           <h1 className="text-xs font-medium tracking-wider text-gray-900">Masatoshi Sato</h1>
         </div>
         <a href="#contact" className="text-[9px] tracking-[0.3em] border border-gray-900 text-gray-900 px-3 py-2 hover:bg-gray-900 hover:text-white transition-colors duration-300">
@@ -60,11 +60,13 @@ export default function SideNav() {
                 <a
                   href={item.href}
                   className={`text-[10px] tracking-[0.3em] transition-colors duration-300 ${
-                    isActive ? "text-gray-900" : "text-gray-400 hover:text-gray-600"
+                    isActive ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
                   {isActive && (
-                    <span className="inline-block w-4 h-px bg-gray-900 mr-2 align-middle" />
+                    <span className="text-accent mr-2" aria-hidden="true">
+                      →
+                    </span>
                   )}
                   {item.label}
                 </a>

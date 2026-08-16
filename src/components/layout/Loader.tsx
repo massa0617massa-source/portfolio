@@ -59,7 +59,7 @@ export default function Loader() {
       >
         <p
           ref={nameRef}
-          className="text-[11px] tracking-[0.8em] text-gray-400 uppercase"
+          className="text-[11px] tracking-[0.8em] text-gray-300 uppercase"
         >
           Masatoshi Sato
         </p>

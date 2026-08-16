@@ -8,7 +8,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  /* A案のアクセント。白と墨に対して1色だけ差す */
+  --color-accent: #2743e0;
+  --color-accent-soft: #e8ebfc;
   --font-sans: var(--font-inter), var(--font-noto), sans-serif;
+  --font-serif: var(--font-serif-jp), serif;
 }
 
 html {
@@ -19,11 +23,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  cursor: none;
 }
 
-a, button, [role='button'] {
-  cursor: none;
+/* カスタムカーソルはマウス環境でのみ。タッチ/ペン環境では標準カーソルを残す */
+.cursor-dot {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a, button, [role='button'] {
+    cursor: none;
+  }
+
+  .cursor-dot {
+    display: block;
+  }
 }
 
 * {

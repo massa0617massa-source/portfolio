@@ -13,20 +13,25 @@ export async function submitContact(formData: FormData) {
     return { success: false, error: "入力内容を確認してください。" };
   }
 
+  const fallbackError =
+    "送信できませんでした。お手数ですが massa0617massa@gmail.com へ直接ご連絡ください。";
+
   if (!process.env.RESEND_API_KEY) {
-    return { success: false, error: "APIキーが設定されていません。" };
+    console.error("RESEND_API_KEY is not set");
+    return { success: false, error: fallbackError };
   }
 
   const { error } = await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "Masatoshi Sato Portfolio <onboarding@resend.dev>",
     to: "massa0617massa@gmail.com",
+    replyTo: email,
     subject: `【ポートフォリオ】${name}様からお問い合わせ`,
     text: `名前: ${name}\nメール: ${email}\n\n${message}`,
   });
 
   if (error) {
     console.error("Resend error:", error);
-    return { success: false, error: `送信に失敗しました: ${error.message}` };
+    return { success: false, error: fallbackError };
   }
 
   return { success: true };

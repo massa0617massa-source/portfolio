@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
+import ProfilePhoto from "@/components/ui/ProfilePhoto";
 
 const MARQUEE_TEXT = "MASATOSHI SATO — FULL-STACK ENGINEER — ";
 
@@ -66,13 +67,22 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center py-20 pr-4 md:py-32 md:pr-16 overflow-hidden"
     >
-      <div data-fade className="mb-8">
-        <p className="text-[10px] tracking-[0.5em] text-gray-400 uppercase">
-          Full-Stack Engineer
-        </p>
-        <p className="text-[10px] tracking-[0.4em] text-gray-300 uppercase mt-1">
-          AI × Web × Automation
-        </p>
+      <div data-fade className="mb-8 flex items-start gap-5">
+        <ProfilePhoto size={92} />
+        <div>
+          <p className="text-sm font-medium tracking-[0.15em] text-gray-900">
+            佐藤 雅俊
+            <span className="text-[10px] tracking-[0.3em] text-gray-500 ml-3 align-middle uppercase">
+              Masatoshi Sato
+            </span>
+          </p>
+          <p className="text-[11px] tracking-[0.2em] text-gray-600 mt-2">
+            フルスタックエンジニア｜AI・Web・業務自動化
+          </p>
+          <p className="text-[11px] tracking-[0.2em] text-gray-600 mt-1">
+            電気通信大学 情報理工学域｜プログラミング・情報セキュリティを専攻
+          </p>
+        </div>
       </div>
 
       <h2 className="mb-10">
@@ -96,13 +106,24 @@ export default function Hero() {
 
       <div className="mb-12">
         <span className="block overflow-hidden">
-          <span data-reveal className="block text-sm text-gray-500 leading-loose">
-            MVP開発 · AI実装 · 自動化
+          <span data-reveal className="block text-sm text-gray-700 leading-loose">
+            AI導入の相談・社内レクチャー · AI実装 · 業務自動化 · Web開発
           </span>
         </span>
         <span className="block overflow-hidden">
-          <span data-reveal className="block text-sm text-gray-500 leading-loose">
-            ── 最短で形にします。
+          <span data-reveal className="block text-sm text-gray-700 leading-loose">
+            ── 要件を決めるところから、動いて回るところまで。
+          </span>
+        </span>
+        <span className="block overflow-hidden">
+          <span
+            data-reveal
+            className="block text-sm text-gray-700 leading-loose mt-3"
+          >
+            <span className="text-accent mr-1.5" aria-hidden="true">
+              →
+            </span>
+            平日 8:00〜22:00、日中はすぐに返信します。
           </span>
         </span>
       </div>
@@ -110,15 +131,15 @@ export default function Hero() {
       <div data-fade className="flex gap-4 flex-wrap">
         <a
           href="#works"
-          className="inline-block text-[10px] tracking-[0.4em] border border-gray-300 text-gray-600 px-8 py-4 hover:border-gray-900 hover:text-gray-900 transition-colors duration-300 w-fit"
+          className="inline-block text-xs tracking-[0.2em] border border-gray-400 text-gray-700 px-8 py-4 hover:border-gray-900 hover:text-gray-900 transition-colors duration-300 w-fit"
         >
-          VIEW WORKS
+          実績を見る
         </a>
         <a
           href="#contact"
-          className="inline-block text-[10px] tracking-[0.4em] border border-gray-900 text-gray-900 px-8 py-4 hover:bg-gray-900 hover:text-white transition-colors duration-300 w-fit"
+          className="inline-block text-xs tracking-[0.2em] border border-gray-900 bg-gray-900 text-white px-8 py-4 hover:bg-white hover:text-gray-900 transition-colors duration-300 w-fit"
         >
-          CONTACT
+          相談する
         </a>
       </div>
 

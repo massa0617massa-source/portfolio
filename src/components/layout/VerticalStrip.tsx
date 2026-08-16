@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
 import { STRIP_TEXT } from "@/lib/constants";
 
 const REPEATED_TEXT = Array(12).fill(STRIP_TEXT).join("");

@@ -19,7 +19,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`fixed bottom-12 left-[2vw] z-30 text-[9px] tracking-[0.4em] text-gray-400 hover:text-gray-900 transition-all duration-500 pointer-events-auto ${
+      className={`fixed bottom-12 left-[2vw] z-30 text-[10px] tracking-[0.3em] text-gray-600 hover:text-gray-900 transition-all duration-500 pointer-events-auto ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
       style={{ writingMode: "vertical-rl" }}
