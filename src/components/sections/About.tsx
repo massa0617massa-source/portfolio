@@ -37,16 +37,10 @@ export default function About() {
       <AnimatedBlock direction="left" delay={0.1}>
         <div className="text-[15px] text-gray-800 leading-loose mb-14 max-w-2xl space-y-6">
           <p className="text-lg font-medium text-gray-900 leading-relaxed">
-            多くの企業のAI活用をリードする。
-            <br />
-            製造・自動車・ECまで、業種を問わず現場に入っている。
+            社交ダンス日本一になるまでに身に着けた集中力や人前でのアピール力を、AIに注ぎ、多くの企業のAI活用をリードする。
           </p>
           <p>
-            ダンスで身に着けた集中力や人前でのアピール力を、AIに注いでいる。
-          </p>
-          <p>
-            AIエージェント基盤、ECモールの在庫自動化、LINE配信基盤、AI×SEOの記事制作パイプラインを、
-            要件を決めるところから運用まで一人で作ってきた。
+            AIエージェント基盤、ECモールの在庫自動化、LINE配信基盤、AI×SEOの記事制作パイプラインを、要件を決めるところから運用まで一人で作成。
           </p>
         </div>
       </AnimatedBlock>
