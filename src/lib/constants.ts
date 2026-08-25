@@ -9,7 +9,7 @@ export const NAV_ITEMS = [
 
 export const SOCIAL_LINKS = [
   { label: "X", href: "https://x.com/tanuki_ai_lab" },
-  { label: "GitHub", href: "https://github.com/massa0617massa" },
+  { label: "GitHub", href: "https://github.com/massa0617massa-source" },
 ] as const;
 
 export const CONTACT_EMAIL = "massa0617massa@gmail.com";
