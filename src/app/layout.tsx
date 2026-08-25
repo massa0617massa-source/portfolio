@@ -78,7 +78,7 @@ const personJsonLd = {
     ],
     sameAs: [
       "https://x.com/tanuki_ai_lab",
-      "https://github.com/massa0617massa",
+      "https://github.com/massa0617massa-source",
     ],
   },
 };
